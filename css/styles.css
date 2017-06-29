@@ -1,5 +1,56 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Open Sans", Montserrat, Arial, Helvetica, sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: Montserrat, "Open Sans", Arial, Helvetica, sans-serif;
+    margin: 2em 8px 1em 8px;
+}
+
+p {
+    margin: 8px;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar > .navbar-list {
+    float: right;
+}
+
+.navbar > .navbar-list > .navbar-list-item {
+    display: inline;
+}
+
+.navbar > .navbar-list > .navbar-list-item a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1em;
+    color: #FFFFFF;
+    font-family: Courier New, Courier, monospace;
+}
+
+.navbar > .navbar-list > .navbar-list-item a:before {
+    content: "< ";
+}
+
+.navbar > .navbar-list > .navbar-list-item a:after {
+    content: " />";
+}
+
+.navbar > .navbar-list > .navbar-list-item.active a::after {
+    content: "* >";
+}
+
+.navbar > .navbar-list > .navbar-list-item a:hover::before {
+    content: "[ ";
+}
+
+.navbar > .navbar-list > .navbar-list-item a:hover::after {
+    content: " /]";
+}
