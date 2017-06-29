@@ -1,3 +1,5 @@
+/* Basic reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +14,9 @@ h1, h2, h3, h4, h5, h6 {
 p {
     margin: 8px;
 }
+
+
+/* Top navbar menu */
 
 .navbar{
     position: fixed;
@@ -54,3 +59,16 @@ p {
 .navbar > .navbar-list > .navbar-list-item a:hover::after {
     content: " /]";
 }
+
+
+/* Header and cover */
+
+.header > .cover {
+    position: relative;
+    display: block;
+    background: url("../images/cover-image.jpg") center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
