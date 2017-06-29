@@ -72,3 +72,31 @@ p {
     height: 100vh;
 }
 
+.header > .header-name {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    color: #c0c0c0;
+    font-size: 60px;
+    text-shadow: 2px 2px #333333;
+}
+
+.header > .header-job {
+    position: absolute;
+    bottom: 12%;
+    right: 10%;
+    color: #dd4444;
+    font-size: 30px;
+}
+
+.header > .header-photo {
+    position: absolute;
+    bottom: 25%;
+    right: 10%;
+}
+
+.header > .header-photo img {
+    border: solid rgba(255, 255, 255, .3) 15px;
+    border-radius: 50%;
+    width: 200px;
+}
