@@ -7,7 +7,6 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Montserrat, "Open Sans", Arial, Helvetica, sans-serif;
     margin: 2em 8px 1em 8px;
 }
 
@@ -15,6 +14,11 @@ p {
     margin: 8px;
 }
 
+/* Font settings */
+
+h1, h2, h3, h4, h5, h6, strong {
+    font-family: Montserrat, "Open Sans", Arial, Helvetica, sans-serif;
+}
 
 /* Top navbar menu */
 
@@ -74,11 +78,15 @@ p {
 
 .header > .header-name {
     position: absolute;
-    bottom: 10%;
+    bottom: 12%;
     right: 10%;
     color: #c0c0c0;
-    font-size: 60px;
+    font-size: 40px;
     text-shadow: 2px 2px #333333;
+}
+
+.header > .header-name span {
+    font-weight: 300;
 }
 
 .header > .header-job {
@@ -89,14 +97,14 @@ p {
     font-size: 30px;
 }
 
-.header > .header-photo {
-    position: absolute;
-    bottom: 25%;
-    right: 10%;
+/* Section general settings */
+
+.section-title::after {
+    content: "_";
+    color: #990000;
 }
 
-.header > .header-photo img {
-    border: solid rgba(255, 255, 255, .3) 15px;
-    border-radius: 50%;
-    width: 200px;
+.section-content > .thirds {
+    width: 33%;
+    display: inline-block;
 }
