@@ -99,4 +99,6 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 .inverted {
     background-color: #333333;
     color: #f0f0f0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
 }
