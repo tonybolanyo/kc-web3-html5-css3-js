@@ -91,3 +91,12 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     content: "_";
     color: #990000;
 }
+
+.section-container {
+    padding: 2em 0;
+}
+
+.inverted {
+    background-color: #333333;
+    color: #f0f0f0;
+}
