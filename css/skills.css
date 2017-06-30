@@ -1,0 +1,72 @@
+.skills-container {
+    margin-right: 5%;
+}
+
+.progress-bar {
+    padding: 5px;
+}
+
+.progress-bar > h4 {
+    margin: .3em auto;
+}
+
+.progress-bar > .progress-bar-space {
+    display: block;
+    position: relative;
+    height: 6px;
+    width: 100%;
+    background: #E0E0E0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar > .progress-bar-space > .progress-bar-value {
+    width: 10%;
+    height: 6px;
+    background: #990000;
+    width: 0;
+}
+
+.progress-bar > .progress-bar-space > .progress-bar-value[data-value="0"] {
+    width: 0;
+}
+
+.progress-bar > .progress-bar-space > .progress-bar-value[data-value="10"] {
+    width: 10%;
+}
+
+.progress-bar > .progress-bar-space > .progress-bar-value[data-value="20"] {
+    width: 20%;
+}
+
+.progress-bar > .progress-bar-space > .progress-bar-value[data-value="30"] {
+    width: 30%;
+}
+
+.progress-bar > .progress-bar-space > .progress-bar-value[data-value="40"] {
+    width: 40%;
+}
+
+.progress-bar > .progress-bar-space > .progress-bar-value[data-value="50"] {
+    width: 50%;
+}
+
+.progress-bar > .progress-bar-space > .progress-bar-value[data-value="60"] {
+    width: 60%;
+}
+
+.progress-bar > .progress-bar-space > .progress-bar-value[data-value="70"] {
+    width: 70%;
+}
+
+.progress-bar > .progress-bar-space > .progress-bar-value[data-value="80"] {
+    width: 80%;
+}
+
+.progress-bar > .progress-bar-space > .progress-bar-value[data-value="90"] {
+    width: 90%;
+}
+
+.progress-bar > .progress-bar-space > .progress-bar-value[data-value="100"] {
+    width: 100%;
+}
