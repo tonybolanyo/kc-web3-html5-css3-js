@@ -1,0 +1,73 @@
+.timeline {
+    position: relative;
+    width: 100%;
+    max-width: 950px;
+    margin: 2em auto;
+    padding: 50px 0;
+}
+
+/* vertical line */
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    /* It's 4px wide so we push 2px left
+       so it's perfectly centered */
+    left: calc(calc(100% / 3) - 2px);
+    bottom: 0px;
+    width: 4px;
+    background: #dddddd;
+}
+
+.timeline > .entry {
+    position: relative;
+    margin: 2em 0;
+}
+
+.timeline > .entry > .title {
+    float: left;
+    width: calc(100% / 3); /* 33% */
+    padding-right: 30px;
+    text-align: right;
+}
+
+/* Make a nice red circle to spot the entry
+   using absolute positioning for easier calculations */
+.entry > .description::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 4px solid #990000;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 99;
+    /* We need to move 4px border + 8/2 px (half size)
+       to center over the vertical line */
+    left: calc(calc(100% / 3) - 8px);
+    top: 16px;
+}
+
+.timeline > .entry > .title > .dates {
+    font-size: small;
+    color: #666666;
+}
+
+.timeline > .entry > .title > h4 {
+    margin: 0;
+}
+
+.timeline > .entry > .description {
+    float: right;
+    width: calc(100% / 1.5); /* 100 * 2 / 3 = 66.66666% */
+    padding-left: 30px;
+}
+
+.timeline > .entry > .description ul {
+    padding-left: 2.5em;
+    list-style-type: none;
+}
+
+.timeline > .entry > .description ul > li::before {
+    content:"– "
+}
