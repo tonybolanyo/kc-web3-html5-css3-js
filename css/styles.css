@@ -1,3 +1,11 @@
+/*
+ Naranja base: #FFA828
+ Marrón: #B2700E
+ Naranja 2; #FFB241
+ Azul: #0068B2
+ Azul claro: #28A5FF
+*/
+
 /* Font settings */
 
 h1, h2, h3, h4, h5, h6, strong {
@@ -82,7 +90,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     position: absolute;
     bottom: 12%;
     right: 10%;
-    color: #dd4444;
+    color: #FFA828;
     font-size: 30px;
 }
 
@@ -90,7 +98,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 
 .section-title::after {
     content: "_";
-    color: #990000;
+    color: #FFA828;
 }
 
 .section-container, .footer-content {
@@ -98,7 +106,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 
 .inverted {
-    background-color: #333333;
+    background-color: #0068B2;
     color: #f0f0f0;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
@@ -111,13 +119,13 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 
 .speciality span {
-    color: lightslategray;
+    color: #B2700E;
 }
 
 /* Footer */
 
 .footer {
-    background-color: #333333;
+    background-color: #444452;
     color: #f0f0f0;
     min-height: 250px;
 }
@@ -136,6 +144,6 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 
 .social-links a:hover {
-    color: #dd4444;
+    color: #FFA828;
     transition: all .2s;
 }

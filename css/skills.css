@@ -15,7 +15,7 @@
     position: relative;
     height: 6px;
     width: 100%;
-    background: #E0E0E0;
+    background: #ddf;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -23,7 +23,7 @@
 .progress-bar > .progress-bar-space > .progress-bar-value {
     width: 10%;
     height: 6px;
-    background: #990000;
+    background: #FFA828;
     width: 0;
 }
 

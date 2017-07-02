@@ -16,7 +16,7 @@
     left: calc(calc(100% / 3) - 2px);
     bottom: 0px;
     width: 4px;
-    background: #dddddd;
+    background: #ddf;
 }
 
 .timeline > .entry {
@@ -38,7 +38,7 @@
     position: absolute;
     width: 8px;
     height: 8px;
-    border: 4px solid #990000;
+    border: 4px solid #FFA828;
     background-color: #fff;
     border-radius: 50%;
     z-index: 99;
@@ -50,7 +50,7 @@
 
 .timeline > .entry > .title > .dates {
     font-size: small;
-    color: #666666;
+    color: #B2700E;
 }
 
 .timeline > .entry > .title > h4 {
