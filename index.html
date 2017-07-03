@@ -219,23 +219,30 @@
                         <label for="email">e-mail</label>
                     </div>
                     <div class="form-group">
+                        <input type="text" name="phone" required>
+                        <label for="phone">Phone</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="group-title">
+                            How do you know me?
+                        </div>
                         <label class="radio">
                             <input type="radio" name="knownby" value="1">
+                            <span>Twitter</span>
                         </label>
                         <label class="radio">
                             <input type="radio" name="knownby" value="1">
+                            <span>Facebook</span>
                         </label>
                         <label class="radio">
                             <input type="radio" name="knownby" value="1">
+                            <span>LinkedIn</span>
                         </label>
                         <label class="radio">
                             <input type="radio" name="knownby" value="other">
-                            <input type="text" name="knownbyother">
+                            <span>Other</span>
+                            <input type="text" name="knownbyother" id="knownbyother">
                         </label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="phone" required>
-                        <label for="phone">Phone</label>
                     </div>
                     <div class="form-group">
                         <textarea name="comments"></textarea>

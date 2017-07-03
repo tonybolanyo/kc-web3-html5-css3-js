@@ -1,32 +1,34 @@
-.form-group {
+.form-group, .form-actions {
     padding: 20px 8px;
     position: relative;
 }
 
 /* input type text and email */
 
-.form-group > input[type="text"],
-.form-group > input[type="email"],
-.form-group > textarea {
+input[type="text"],
+input[type="email"],
+textarea {
     display: block;
     border: 0;
     border-bottom: solid 1px #ccd;
     padding: 5px 0;
     font-size: 20px;
 }
-.form-group > input[type="text"]:focus,
-.form-group > input[type="email"]:focus,
-.form-group > textarea:focus {
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
     border-bottom: solid 2px #B2700E;
 }
 
 /* remove border when input is focused */
-.form-group > input:focus,
-.form-group > textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
 }
 
-.form-group > label {
+input ~ label,
+textarea ~ label {
     position: absolute;
     top: 25px;
     left: 8px; /* same as padding in form-group */
@@ -36,10 +38,9 @@
 
 /* We need put label *after* input because
    css3 hasn't selector for "followed by" elements */
-.form-group > input:focus ~ label,
-.form-group > input:valid ~ label,
-.form-group > textarea:focus ~ label,
-.form-group > textarea:valid ~ label
+input:focus ~ label,
+input:valid ~ label,
+textarea:focus ~ label
  {
     color: #B2700E;
     font-weight: bolder;
@@ -60,4 +61,28 @@ input[type="submit"] {
     font-weight: bold;
     width: 50%;
     max-width: 150px;
+}
+
+.form-group > .radio {
+    display: block;
+    padding: 8px;
+    font-size: 20px;
+}
+
+.form-group > .group-title {
+    font-size: 20px;
+    margin-bottom: .5em;
+}
+
+#knownbyother {
+    display: none;
+    border: 0;
+    border-bottom: solid 1px #ccd;
+    padding: 5px 0;
+    font-size: 20px;
+}
+
+#knownbyother:focus {
+    outline: none;
+    border-bottom: solid 2px #B2700E;
 }
