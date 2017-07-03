@@ -1,4 +1,40 @@
-input[type="text"] {
+.form-group {
+    padding: 20px 8px;
+    position: relative;
+}
+
+.form-group > input[type="text"],
+.form-group > input[type="email"] {
+    display: block;
     border: 0;
     border-bottom: solid 1px #ccd;
+    padding: 5px;
+    font-size: 20px;
+}
+
+/* remove border when input is focused */
+.form-group > input:focus {
+    outline: none;
+}
+
+.form-group > label {
+    position: absolute;
+    top: 25px;
+    left: 13px; /* padding in form-group (8) + padding in input (5) */
+    font-size: 20px; /* same as input */
+    transition: ease .3s;
+}
+
+/* We need put label *after* input because
+   css3 hasn't selector for "followed by" elements */
+.form-group > input:focus ~ label,
+.form-group > input:valid ~ label {
+    color: #B2700E;
+    font-weight: bolder;
+    font-size: small;
+    top: 0;
+}
+
+.form-group > input:valid ~ label {
+    color:darkred;
 }

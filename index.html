@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tony G. Bolaño</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid.css">
@@ -211,9 +210,39 @@
             <h1 class="section-title">contact</h1>
             <div class="row">
                 <form action="#" method="POST" name="contact">
-                    <div class="form-row">
-                        <label for="name">Name:</label>
+                    <div class="form-group">
                         <input type="text" name="name" required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" required>
+                        <label for="email">e-mail</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="radio">
+                            <input type="radio" name="knownby" value="1">
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="knownby" value="1">
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="knownby" value="1">
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="knownby" value="other">
+                            <input type="text" name="knownbyother">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="phone" required>
+                        <label for="phone">Phone</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Comments</label>
+                        <textarea name="comments"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <input type="submit">
                     </div>
                 </form>
             </div>
