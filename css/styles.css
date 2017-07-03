@@ -6,6 +6,25 @@
  Azul claro: #28A5FF
 */
 
+body {
+    /* This allow the browser calculate the correct
+       viewport width. The viewport includes scrollbars
+       so it's necesary for the inverted sections where
+       we extends margins to de viewport width.
+       
+       See https://www.w3.org/TR/css3-values/#viewport-relative-lengths
+       
+       The viewport-percentage lengths are relative to the
+       size of the initial containing block. When the height
+       or width of the initial containing block is changed,
+       they are scaled accordingly. However, when the value of
+       overflow on the root element is auto, any scroll bars
+       are assumed not to exist. Note that the initial 
+       containing block’s size is affected by the presence of 
+       scrollbars on the viewport. */
+    overflow-y: scroll;
+}
+
 /* Font settings */
 
 h1, h2, h3, h4, h5, h6, strong {
@@ -108,8 +127,21 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 .inverted {
     background-color: #0068B2;
     color: #f0f0f0;
+    /*
+    Using calc function we can calculate margins:
+    
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
+
+    but we can use a different approach
+    without using calc function, only pure CSS
+    */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
 }
 
 /* Profile section */
