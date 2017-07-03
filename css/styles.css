@@ -147,3 +147,11 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     color: #FFA828;
     transition: all .2s;
 }
+
+/* contact section */
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

@@ -86,3 +86,7 @@ input[type="submit"] {
     outline: none;
     border-bottom: solid 2px #B2700E;
 }
+
+fieldset {
+    border: 0;
+}
