@@ -23,6 +23,7 @@ body {
        containing block’s size is affected by the presence of 
        scrollbars on the viewport. */
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 /* Font settings */
@@ -42,6 +43,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     top: 0;
     width: 100%;
     background: rgba(0, 0, 0, .7);
+    z-index: 9999;
 }
 
 .navbar > .navbar-list {
