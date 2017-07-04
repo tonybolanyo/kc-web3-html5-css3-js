@@ -4,6 +4,7 @@
  Naranja 2; #FFB241
  Azul: #0068B2
  Azul claro: #28A5FF
+ Azul casi negro: #111133
 */
 
 body {
@@ -30,6 +31,7 @@ body {
 
 h1, h2, h3, h4, h5, h6, strong {
     font-family: Montserrat, "Open Sans", Arial, Helvetica, sans-serif;
+    color: #111133;
 }
 
 h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
@@ -103,6 +105,10 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     width: 100vw;
 }
 
+.inverted h1, .inverted h2, .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
+    color: #ffffff;
+}
+
 /* Profile section */
 
 .my_video {
@@ -119,8 +125,19 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 
 /* Footer */
 
+.recoding {
+    font-family: Lato;
+    color: #ffffff;
+    font-size: 110%;
+}
+
+.recoding > span {
+    font-family: Lato;
+    color: #FFA828;
+}
+
 .footer {
-    background-color: #444452;
+    background-color: #111133;
     color: #f0f0f0;
     min-height: 250px;
 }

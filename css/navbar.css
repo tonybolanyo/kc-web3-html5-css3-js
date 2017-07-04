@@ -7,6 +7,20 @@
     animation: fadeDownward .7s ease-in-out forwards;
 }
 
+.navbar .logo {
+    font-family: Lato;
+    float: left;
+    color: #ffffff;
+    font-size: 30px;
+    margin-left: 8px;
+    opacity: 0;
+    animation: fadeUpward 1s ease-out .5s forwards;
+}
+
+.navbar .logo > span {
+    color: #FFA828;
+}
+
 .navbar > .navbar-list {
     float: right;
 }
