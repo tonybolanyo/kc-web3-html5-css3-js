@@ -1,0 +1,44 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .7);
+    z-index: 9999;
+    animation: fadeDownward .7s ease-in-out forwards;
+}
+
+.navbar > .navbar-list {
+    float: right;
+}
+
+.navbar > .navbar-list > .navbar-list-item {
+    display: inline;
+}
+
+.navbar > .navbar-list > .navbar-list-item a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1em;
+    color: #FFFFFF;
+    font-family: Courier New, Courier, monospace;
+}
+
+.navbar > .navbar-list > .navbar-list-item a:before {
+    content: "< ";
+}
+
+.navbar > .navbar-list > .navbar-list-item a:after {
+    content: " />";
+}
+
+.navbar > .navbar-list > .navbar-list-item.active a::after {
+    content: "* >";
+}
+
+.navbar > .navbar-list > .navbar-list-item a:hover::before {
+    content: "[ ";
+}
+
+.navbar > .navbar-list > .navbar-list-item a:hover::after {
+    content: " /]";
+}

@@ -36,53 +36,6 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     font-weight: 300;
 }
 
-/* Top navbar menu */
-
-.navbar{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, .7);
-    z-index: 9999;
-}
-
-.navbar > .navbar-list {
-    float: right;
-}
-
-.navbar > .navbar-list > .navbar-list-item {
-    display: inline;
-}
-
-.navbar > .navbar-list > .navbar-list-item a {
-    display: inline-block;
-    text-decoration: none;
-    padding: 1em;
-    color: #FFFFFF;
-    font-family: Courier New, Courier, monospace;
-}
-
-.navbar > .navbar-list > .navbar-list-item a:before {
-    content: "< ";
-}
-
-.navbar > .navbar-list > .navbar-list-item a:after {
-    content: " />";
-}
-
-.navbar > .navbar-list > .navbar-list-item.active a::after {
-    content: "* >";
-}
-
-.navbar > .navbar-list > .navbar-list-item a:hover::before {
-    content: "[ ";
-}
-
-.navbar > .navbar-list > .navbar-list-item a:hover::after {
-    content: " /]";
-}
-
-
 /* Header and cover */
 
 .header > .cover {
@@ -101,6 +54,8 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     color: #c0c0c0;
     font-size: 40px;
     text-shadow: 2px 2px #333333;
+    opacity: 0;
+    animation: fadeDownward 1s ease-in .3s forwards;
 }
 
 .header > .header-name span {
@@ -113,6 +68,8 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     right: 10%;
     color: #FFA828;
     font-size: 30px;
+    opacity: 0;
+    animation: fadeUpward 1s ease-out .8s forwards;
 }
 
 /* Section general settings */
