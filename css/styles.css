@@ -123,6 +123,11 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     color: #B2700E;
 }
 
+#section-profile p {
+    text-align: justify;
+    margin-right: 2em;
+}
+
 /* Footer */
 
 .recoding {
