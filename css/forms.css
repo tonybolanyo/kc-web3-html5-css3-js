@@ -22,12 +22,12 @@ textarea:focus {
 }
 
 /* remove border when input is focused */
-input:focus,
+input[type="text"]:focus,
 textarea:focus {
     outline: none;
 }
 
-input ~ label,
+input[type="text"] ~ label,
 textarea ~ label {
     position: absolute;
     top: 25px;
@@ -38,8 +38,8 @@ textarea ~ label {
 
 /* We need put label *after* input because
    css3 hasn't selector for "followed by" elements */
-input:focus ~ label,
-input:valid ~ label,
+input[type="text"]:focus ~ label,
+input[type="text"]:valid ~ label,
 textarea:focus ~ label
  {
     color: #B2700E;
@@ -63,19 +63,13 @@ input[type="submit"] {
     max-width: 150px;
 }
 
-.form-group > .radio {
-    display: block;
-    padding: 8px;
-    font-size: 20px;
-}
-
 .form-group > .group-title {
     font-size: 20px;
     margin-bottom: .5em;
 }
 
 #knownbyother {
-    display: none;
+    visibility: hidden;
     border: 0;
     border-bottom: solid 1px #ccd;
     padding: 5px 0;
@@ -89,4 +83,66 @@ input[type="submit"] {
 
 fieldset {
     border: 0;
+}
+
+/* first, hide the original radio button */
+.form-group > .radio-control > input[type=radio] {
+    position: absolute;
+    display: none;
+}
+
+/* make some space to draw custom radio before field label */
+.form-group > .radio-control > input[type=radio] + label {
+    position: relative;
+    padding-left: 2em;
+    vertical-align: middle;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Draw custom radio before field label
+   This is the 'unchecked' state. */
+.form-group > .radio-control > input[type=radio] + label:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    margin-top: -9px;
+    border: 2px solid #ccd;
+    border-radius: 50%;
+    transition: border 0.4s ease;
+}
+
+/* change color if checked */
+.form-group > .radio-control > input[type=radio]:checked + label:before {
+    border: 2px solid #B2700E;
+}
+
+/* draw checked state, but hide until checked */
+.form-group > .radio-control > input[type=radio] + label:after {
+    border-radius: 50%;
+    content: '';
+    background-color: #FFA828;
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    /* use scale to make some smooth check-in */
+    transform: scale(0);
+    transform-origin: 50%;
+    transition: transform .04s ease;
+}
+
+/* show checked state */
+.form-group > .radio-control > input[type=radio]:checked + label:after {
+    transform: scale(1);
+}
+
+/* we can do this with JavaScript, but it's a presentation concern */
+#knownby4:checked ~ #knownbyother {
+    visibility: visible;
 }
