@@ -1,10 +1,19 @@
 .navbar{
-    position: fixed;
-    top: 0;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, .6);
     z-index: 9999;
     animation: fadeDownward .7s ease-in-out forwards;
+    transition: background-color 1s ease;
+}
+
+/* class to make navbar stick on top of the screen */
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    bottom: auto;
+    background: rgba(17, 17, 51, 1);
 }
 
 .navbar .logo {
