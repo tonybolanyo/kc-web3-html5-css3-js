@@ -91,20 +91,25 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(17, 17, 51, .25);
+    background-color: rgba(17, 17, 51, .3);
     border-radius: 15px;
     -webkit-transition: background-color .5s ease;
     -moz-transition: background-color .5s ease;
     transition: background-color .5s ease;
+    transition: border-color .5s ease;
+    visibility: hidden;
+    border: solid 4px rgba(255, 255, 255, .3);
+    outline: none;
 }
 
 .back-top > a:hover {
     background-color: rgba(17, 17, 51, .75);
+    border-color: rgba(255, 255, 255, .6);
 }
 
 .back-top > a:after {
     position: absolute;
-    top: 14px;
+    top: 16px;
     left: calc(50% - .6em);
     margin-left: auto;
     margin-right: auto;
@@ -113,15 +118,20 @@
     /* By using an em scale, the arrows will size with the font */
     width: 1em;
     height: 1em;
-    border-right: .3em solid #ccd;
-    border-top: .3em solid #ccd;
+    border-right: .3em solid #dde;
+    border-top: .3em solid #dde;
     transform: rotate(-45deg);
     margin-right: 0.5em;
+}
+
+.back-top > a:hover:after {
+    border-right: .3em solid #FFA828;
+    border-top: .3em solid #FFA828;
 }
 
 .back-top > a:before {
     position: absolute;
-    top: 26px;
+    top: 29px;
     left: calc(50% - .6em);
     margin-left: auto;
     margin-right: auto;
@@ -130,12 +140,13 @@
     /* By using an em scale, the arrows will size with the font */
     width: 1em;
     height: 1em;
-    border-right: .3em solid #ccd;
-    border-top: .3em solid #ccd;
+    border-right: .3em solid #aad;
+    border-top: .3em solid #aad;
     transform: rotate(-45deg);
     margin-right: 0.5em;
 }
 
-.back-top > a {
-
+.back-top > a:hover:before {
+    border-right: .3em solid #B2700E;
+    border-top: .3em solid #B2700E;
 }

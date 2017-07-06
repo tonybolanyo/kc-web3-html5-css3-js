@@ -38,6 +38,10 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     font-weight: 300;
 }
 
+.visible {
+    visibility: visible !important;
+}
+
 /* Header and cover */
 
 .header > .cover {
@@ -51,10 +55,10 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 
 .header > .header-name {
     position: absolute;
-    bottom: 12%;
+    bottom: 18%;
     right: 10%;
     color: #c0c0c0;
-    font-size: 40px;
+    font-size: 50px;
     text-shadow: 2px 2px #333333;
     opacity: 0;
     animation: fadeDownward 1s ease-in .3s forwards;
@@ -66,10 +70,10 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 
 .header > .header-job {
     position: absolute;
-    bottom: 12%;
+    bottom: 18%;
     right: 10%;
     color: #FFA828;
-    font-size: 30px;
+    font-size: 40px;
     opacity: 0;
     animation: fadeUpward 1s ease-out .8s forwards;
 }
@@ -123,7 +127,11 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     color: #B2700E;
 }
 
-#section-profile p {
+.speciality [class*="icon-"] {
+    transition: transform .5s ease;
+}
+
+.justify {
     text-align: justify;
     margin-right: 2em;
 }
@@ -172,3 +180,4 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
