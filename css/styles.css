@@ -85,12 +85,19 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     width: 100%;
     padding-left: 3em;
     font-size: 30px;
+    visibility: hidden;
 }
 
 .typewriter {
     font-family: "Roboto Mono", Courier, monospace;
     color: #c0c0c0;
     font-size: 30px;
+}
+
+.has-cursor::after {
+    content: "_";
+    color: #FFA828;  
+    animation: 800ms blink step-end infinite;
 }
 
 /* Section general settings */
