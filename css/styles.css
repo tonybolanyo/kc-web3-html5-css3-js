@@ -81,24 +81,16 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 .header > .typewriter-container {
     position: absolute;
     top: 5%;
-    right: 10%;
+    left: calc(100% - 14em);
+    width: 100%;
     padding-left: 3em;
-    /*
-    background-color: rgba(17, 17, 51, .8);
-    padding: 3em;
-    */
+    font-size: 30px;
 }
 
 .typewriter {
     font-family: "Roboto Mono", Courier, monospace;
     color: #c0c0c0;
     font-size: 30px;
-}
-
-p.typewriter:last-of-type::after {
-    content: "_";
-    color: #FFA828;  
-    animation: 1s blink step-end infinite;
 }
 
 /* Section general settings */
