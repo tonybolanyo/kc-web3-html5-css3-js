@@ -43,7 +43,7 @@
     text-decoration: none;
     padding: 1em;
     color: #FFFFFF;
-    font-family: Courier New, Courier, monospace;
+    font-family: "Roboto Mono", Courier, monospace;
 }
 
 .navbar > .navbar-list > .navbar-list-item a:before {

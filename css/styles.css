@@ -78,6 +78,29 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     animation: fadeUpward 1s ease-out .8s forwards;
 }
 
+.header > .typewriter-container {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    padding-left: 3em;
+    /*
+    background-color: rgba(17, 17, 51, .8);
+    padding: 3em;
+    */
+}
+
+.typewriter {
+    font-family: "Roboto Mono", Courier, monospace;
+    color: #c0c0c0;
+    font-size: 30px;
+}
+
+p.typewriter:last-of-type::after {
+    content: "_";
+    color: #FFA828;  
+    animation: 1s blink step-end infinite;
+}
+
 /* Section general settings */
 
 .section-title::after {
