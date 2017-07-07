@@ -43,4 +43,4 @@ function typeEffect() {
     container.style.visibility = 'visible';
 }
 
-window.onload = typeEffect;
+window.addEventListener("load", typeEffect);
