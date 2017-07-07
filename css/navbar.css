@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -17,16 +17,21 @@
 }
 
 .navbar .logo {
-    font-family: Lato;
     float: left;
-    color: #ffffff;
     font-size: 30px;
     margin-left: 8px;
     opacity: 0;
     animation: fadeUpward 1s ease-out .5s forwards;
 }
 
-.navbar .logo > span {
+.navbar .logo a {
+    font-family: Lato, "Open Sans", Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar .logo a > span {
+    font-family: Lato, "Open Sans", Arial, Helvetica, sans-serif;
     color: #FFA828;
 }
 
