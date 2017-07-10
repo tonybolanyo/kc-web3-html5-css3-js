@@ -38,7 +38,11 @@
 }
 
 .col-5 {
+    /* we can't use nested calc in IE11 :(
+       so we make part of calculation
     width: calc(calc(100% * 5) / 12);
+    */
+    width: calc(500% / 12);
     float: left;
 }
 
