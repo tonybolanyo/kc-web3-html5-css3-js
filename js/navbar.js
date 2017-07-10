@@ -30,29 +30,53 @@ window.addEventListener("resize", function() {
 /* smooth scroll */
 
 window.addEventListener("load", function() {
+    // after load all elements, attach click event
+    // to every menu item, including logo
+
+    logo = document.getElementById("logo");
     menuItems = document.getElementsByClassName("navbar-list-item");
 
     for (i = 0; i < menuItems.length; i++) {
         menuItems[i].addEventListener("click", scrollToSection);
     }
-});
 
-function smoothScroll(offset) {
-    console.log(offset);
-    var newOffset = offset * offset * (3 - offset * 4);
-    window.scrollBy(0, offset - newOffset);
-    if (newOffset > 0) {
-        setTimeout(smoothScroll, 100, newOffset);
-    }
-}
+    // home is a special case because we use logo to navitate to top
+    logo.addEventListener("click", scrollToSection)
+});
 
 function scrollToSection(event) {
     event.preventDefault();
 
-    var destUri = event.target.href;
-    var sectionId = destUri.split("#")[1];
-    var destSection = document.getElementById(sectionId);
-    var destPosition = destSection.getBoundingClientRect();
-    console.log(destPosition.top);
-    smoothScroll(destPosition.top);
+    var destUri = event.target.hash;
+    var sectionId, destSection;
+
+    if (destUri === '') {
+        destSection = header;
+    } else {
+        sectionId = destUri.substr(1);
+        destSection = document.getElementById(sectionId);
+    }
+
+    /* fix the top position with the navbar height,
+       using 2px to fix round calculations */
+    var navbarHeight = Math.round(navbar.getBoundingClientRect().height)-2;
+    offset = Math.round(destSection.getBoundingClientRect().top) - navbarHeight;
+
+    smoothScroll(offset);
+}
+
+function smoothScroll(offset) {
+    // recursive scroll every 25% of the offset
+    var fromPos = Math.round(window.pageYOffset);
+    var step = Math.round(offset / 4);
+    var toPos = fromPos + step;
+    console.log(fromPos, toPos)
+    if (fromPos == toPos) {
+        // end condition
+        return
+    }
+
+    window.scrollTo(0, toPos);
+    setTimeout(smoothScroll, 30, offset - step);
+
 }
