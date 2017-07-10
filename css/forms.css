@@ -52,7 +52,7 @@ textarea:focus ~ label
     color:darkred;
 }
 
-input[type="submit"] {
+button.submit {
     background: #FFA828;
     padding: 8px;
     border: 0;
