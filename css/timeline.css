@@ -7,13 +7,13 @@
 }
 
 /* vertical line */
-.timeline:before {
+.timeline::before {
     content: '';
     position: absolute;
     top: 0px;
     /* It's 4px wide so we push 2px left
        so it's perfectly centered */
-    left: calc(calc(100% / 3) - 2px);
+    left: calc(100% / 3);
     bottom: 0px;
     width: 4px;
     background: #ddf;
@@ -44,7 +44,7 @@
     z-index: 99;
     /* We need to move 4px border + 8/2 px (half size)
        to center over the vertical line */
-    left: calc(calc(100% / 3) - 8px);
+    left: calc(33.33333333% - 6px);
     top: 16px;
 }
 
