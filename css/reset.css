@@ -19,3 +19,8 @@ p {
     margin: 8px;
 }
 
+/* IE11 doesn't fully support main
+   so we have to add a display directive */
+main {
+    display: block;
+}
