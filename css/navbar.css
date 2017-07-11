@@ -36,6 +36,7 @@
 }
 
 .navbar > .navbar-list {
+    position: relative;
     float: right;
 }
 
@@ -49,6 +50,7 @@
     padding: 1em;
     color: #FFFFFF;
     font-family: "Roboto Mono", Courier, monospace;
+    transition: color .3s ease;
 }
 
 .navbar > .navbar-list > .navbar-list-item a:before {
@@ -69,6 +71,10 @@
 
 .navbar > .navbar-list > .navbar-list-item a:hover::after {
     content: " /]";
+}
+
+.navbar > .navbar-list > .navbar-list-item.active a {
+    color: #FFA828;
 }
 
 /* Back top button */
