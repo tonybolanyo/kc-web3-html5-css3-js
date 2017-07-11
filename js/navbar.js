@@ -1,3 +1,5 @@
+/* sticky navbar */
+
 var header = document.getElementById('header');
 var navbar = document.getElementById('navbar');
 var backTop = document.getElementById('back-top');
@@ -33,10 +35,10 @@ window.addEventListener("load", function() {
     // after load all elements, attach click event
     // to every menu item, including logo
 
-    logo = document.getElementById("logo");
-    menuItems = document.getElementsByClassName("navbar-list-item");
+    var logo = document.getElementById("logo");
+    var menuItems = document.getElementsByClassName("navbar-list-item");
 
-    for (i = 0; i < menuItems.length; i++) {
+    for (var i = 0; i < menuItems.length; i++) {
         menuItems[i].addEventListener("click", scrollToSection);
     }
 
@@ -45,6 +47,8 @@ window.addEventListener("load", function() {
 });
 
 function scrollToSection(event) {
+    // moves to a section when link in navbar is clicked
+
     event.preventDefault();
 
     var destUri = event.target.hash;
@@ -60,8 +64,9 @@ function scrollToSection(event) {
     /* fix the top position with the navbar height,
        using 2px to fix round calculations */
     var navbarHeight = Math.round(navbar.getBoundingClientRect().height)-2;
-    offset = Math.round(destSection.getBoundingClientRect().top) - navbarHeight;
+    var offset = Math.round(destSection.getBoundingClientRect().top) - navbarHeight;
 
+    // call smooth scroll insted
     smoothScroll(offset);
 }
 
@@ -70,13 +75,80 @@ function smoothScroll(offset) {
     var fromPos = Math.round(window.pageYOffset);
     var step = Math.round(offset / 4);
     var toPos = fromPos + step;
-    console.log(fromPos, toPos)
+    
     if (fromPos == toPos) {
         // end condition
         return
     }
 
+    // make the scroll and call the function
+    // recursively with the rest of the distance.
+    // Apply a delay to make the effect.
     window.scrollTo(0, toPos);
     setTimeout(smoothScroll, 30, offset - step);
 
 }
+
+/* scroll spy to activate current section navbar item */
+
+var sections = document.getElementsByTagName("section");
+var currentSection = null;
+
+function isSectionVisible(section) {
+    // returns `true` if a section is considered visible (also active).
+    var rect = section.getBoundingClientRect();
+    var vpHeight = window.innerHeight;
+
+    // Return false if it's not in the viewport
+    if (rect.bottom < 0 || rect.top > vpHeight)
+        return false;
+
+    // Return true if top is in the top half of the viewport
+    // or top half of viewport is "inside" section bounds
+    return (
+        rect.top > 0 && rect.top < vpHeight / 2 ||
+        rect.top < 0 && rect.bottom > vpHeight / 2
+    );
+}
+
+function changeActiveNav(active) {
+    // add class `active` to active section (passed as param) and
+    // remove it from the others
+    var navs = document.getElementsByClassName("navbar-list-item");
+    for (var i = 0; i < navs.length; i++) {
+        if (navs[i] === active) {
+            navs[i].classList.add("active");
+        } else {
+            navs[i].classList.remove("active");
+        }
+    }
+}
+
+window.addEventListener("scroll", function() {
+    // We already have a function listen to scroll event
+    // but make another one for clarity
+
+    var anyVisible = false;
+
+    for (var i = 0; i < sections.length; i++) {
+        var sectionId = sections[i].id;
+        var selector = "a[href$='" + sectionId + "']";
+        if (isSectionVisible(sections[i])) {
+            if (!currentSection || currentSection != sectionId) {
+                // only apply classes if current section changes
+                // not every scroll event inside a section.
+                var link = document.querySelector(selector);
+                var navItem = link.parentNode;
+                currentSection = sectionId;
+                changeActiveNav(navItem);
+            }
+            anyVisible = true;
+        }
+    }
+
+    if (!anyVisible) {
+        // handle when user can see cover, not a content section
+        currentSection = null;
+        changeActiveNav(null);
+    }
+});
