@@ -106,8 +106,8 @@ function isSectionVisible(section) {
     // Return true if top is in the top half of the viewport
     // or top half of viewport is "inside" section bounds
     return (
-        rect.top > 0 && rect.top < vpHeight / 2 ||
-        rect.top < 0 && rect.bottom > vpHeight / 2
+        rect.top > 0 && rect.top < navbar.getBoundingClientRect().height ||
+        rect.top < 0 && rect.bottom > navbar.getBoundingClientRect().height
     );
 }
 
