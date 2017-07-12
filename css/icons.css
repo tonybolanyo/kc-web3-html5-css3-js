@@ -23,6 +23,10 @@
   font-style: normal;
 }
 
+.icon-xxl:before {
+  font-size: 192px !important;
+}
+
 .icon-xl:before {
   font-size: 80px !important;
 }
@@ -35,15 +39,17 @@
   font-size: 40px !important;
 }
 
-.icon-software:before { content: "\f100"; }
-.icon-web:before { content: "\f101"; }
-.icon-project:before { content: "\f102"; }
-.icon-management:before { content: "\f103"; }
-.icon-databases:before { content: "\f104"; }
-.icon-bitbucket:before { content: "\f105"; }
-.icon-github:before { content: "\f106"; }
-.icon-stack-overflow:before { content: "\f107"; }
-.icon-linkedin:before { content: "\f108"; }
-.icon-facebook:before { content: "\f109"; }
-.icon-youtube:before { content: "\f10a"; }
-.icon-twitter:before { content: "\f10b"; }
+.icon-bitbucket:before { content: "\f100"; }
+.icon-stack-overflow:before { content: "\f101"; }
+.icon-linkedin:before { content: "\f102"; }
+.icon-facebook:before { content: "\f103"; }
+.icon-youtube:before { content: "\f104"; }
+.icon-web:before { content: "\f105"; }
+.icon-twitter:before { content: "\f106"; }
+.icon-databases:before { content: "\f107"; }
+.icon-project:before { content: "\f108"; }
+.icon-management:before { content: "\f109"; }
+.icon-software:before { content: "\f10a"; }
+.icon-github:before { content: "\f10b"; }
+.icon-books:before { content: "\f10c"; }
+.icon-brain-gear:before { content: "\f10d"; }

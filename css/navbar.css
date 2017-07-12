@@ -6,6 +6,7 @@
     z-index: 9999;
     animation: fadeDownward .7s ease-in-out forwards;
     transition: background-color 1s ease;
+    height: 50px;
 }
 
 /* class to make navbar stick on top of the screen */
@@ -18,21 +19,25 @@
 
 .navbar .logo {
     float: left;
-    font-size: 30px;
     margin-left: 8px;
     opacity: 0;
     animation: fadeUpward 1s ease-out .5s forwards;
+    line-height: 50px;
 }
 
 .navbar .logo a {
     font-family: Lato, "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 30px;
     color: #ffffff;
     text-decoration: none;
+    line-height: 50px;
 }
 
 .navbar .logo a > span {
     font-family: Lato, "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 30px;
     color: #FFA828;
+    line-height: 50px;
 }
 
 .navbar > .navbar-list {
@@ -47,10 +52,12 @@
 .navbar > .navbar-list > .navbar-list-item a {
     display: inline-block;
     text-decoration: none;
-    padding: 1em;
+    padding: 10px;
     color: #FFFFFF;
     font-family: "Roboto Mono", Courier, monospace;
     transition: color .3s ease;
+    font-size: 16px;
+    line-height: 30px;
 }
 
 .navbar > .navbar-list > .navbar-list-item a:before {
