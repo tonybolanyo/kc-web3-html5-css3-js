@@ -43,7 +43,11 @@ window.addEventListener("load", function() {
     }
 
     // home is a special case because we use logo to navitate to top
-    logo.addEventListener("click", scrollToSection)
+    logo.addEventListener("click", scrollToSection);
+    // its the same case for 'ack to top button'
+    // (elemtnt is defined as global var in the top of this file)
+    backTop.addEventListener("click", scrollToSection);
+
 });
 
 function scrollToSection(event) {
