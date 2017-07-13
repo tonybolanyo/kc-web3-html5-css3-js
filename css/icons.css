@@ -53,3 +53,10 @@
 .icon-github:before { content: "\f10b"; }
 .icon-books:before { content: "\f10c"; }
 .icon-brain-gear:before { content: "\f10d"; }
+.icon-spinner:before { content: "\f10e"; }
+.icon-spinner-arrow:before { content: "\f10f"; }
+.icon-close:before { content: "\f110"; }
+.icon-check:before { content: "\f111"; }
+.icon-valid:before { content: "\f112"; }
+.icon-warning:before { content: "\f113"; }
+.icon-play:before { content: "\f114"; }
