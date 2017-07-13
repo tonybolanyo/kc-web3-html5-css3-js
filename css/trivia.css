@@ -120,3 +120,11 @@
 .trivia-counter-fail {
     right: 18px;
 }
+
+.trivia-loading {
+    display: none;
+}
+
+.trivia-loading.visible {
+    display: block;
+}

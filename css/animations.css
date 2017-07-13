@@ -10,42 +10,52 @@
 }
 
 @keyframes fadeUpward {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
 
-  100% {
-    opacity: 1;
-    transform: none;
-  }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 @keyframes blink {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: #FFA828;
-  }
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #FFA828;
+    }
 }
 
 @keyframes fadeAndZoom {
-  from {
-    opacity: 0;
-    transform: scale(0);
-  }
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
 
-  20% {
-    opacity: 40%;
-  }
+    20% {
+        opacity: 40%;
+    }
 
-  40%, 60% {
-    opacity: 1;
-  }
+    40%, 60% {
+        opacity: 1;
+    }
 
-  to {
-    opacity: 0;
-    transform: scale(2);
-  }
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    100% {
+        transform: rotate(359deg);
+    }
 }

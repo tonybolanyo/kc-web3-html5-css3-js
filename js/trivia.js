@@ -42,6 +42,9 @@ function checkResponse(event) {
 }
 
 function loadQuestion() {
+    var loader = document.getElementsByClassName("trivia-loading")[0];
+    question.innerHTML = "Loading question";
+    loader.classList.add("visible");
     if (sessionToken === null) {
         getSessionToken();
     }
@@ -58,6 +61,7 @@ function loadQuestion() {
                 currentQuestion = jsonResponse.results[0];
                 question.innerHTML = currentQuestion.question;
                 triviaNumQuestions++;
+                loader.classList.remove("visible");
             } else {
                 console.error("Error getting a new question", xhr.status);
             }
