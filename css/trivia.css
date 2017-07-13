@@ -1,7 +1,7 @@
 .popup-section {
     position: fixed;
     background-color: #F0F0F0;
-    z-index: 9998;
+    z-index: 99999;
     top: 10%;
     left: 10%;
     bottom: 10%;
@@ -79,6 +79,11 @@
     right: 10px;
     width: auto;
     background-color: transparent;
+    -webkit-transition: background-color 300ms ease;
+    -moz-transition: background-color 300ms ease;
+    -ms-transition: background-color 300ms ease;
+    -o-transition: background-color 300ms ease;
+    transition: background-color 300ms ease;
 }
 
 .close-btn:hover {
