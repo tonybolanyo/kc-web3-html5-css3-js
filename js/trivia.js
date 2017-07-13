@@ -7,6 +7,8 @@ var sessionToken = null;
 var currentQuestion = null;
 var questionsEndpoint = "https://opentdb.com/api.php";
 var tokenEndpoint = "https://opentdb.com/api_token.php";
+var triviaCorrectAnswered = 0;
+var triviaNumQuestions = 0;
 
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", checkResponse);
@@ -16,12 +18,21 @@ closebtn.addEventListener("click", function() {
     document.getElementById("trivia").classList.remove("popup-visible");
 });
 
+function zeroPad (num) {
+    // return number as string of 2 digits
+    return ("0" + num).slice(-2);
+}
+
 function checkResponse(event) {
-    console.log(event.target.value.toLowerCase(), currentQuestion.correct_answer.toLowerCase());
     if (event.target.value.toLowerCase() === currentQuestion.correct_answer.toLowerCase()) {
         correct.classList.add("visible");
+        triviaCorrectAnswered++;
+        document.getElementById("counter-ok").innerText = 
+            zeroPad(triviaCorrectAnswered);
     } else {
         fail.classList.add("visible");
+        document.getElementById("counter-fail").innerText = 
+            zeroPad(triviaNumQuestions - triviaCorrectAnswered);
     }
     loadQuestion();
     setTimeout(function() {
@@ -31,7 +42,6 @@ function checkResponse(event) {
 }
 
 function loadQuestion() {
-    console.log("Loading question", sessionToken);
     if (sessionToken === null) {
         getSessionToken();
     }
@@ -47,7 +57,7 @@ function loadQuestion() {
                 var jsonResponse = JSON.parse(xhr.responseText);
                 currentQuestion = jsonResponse.results[0];
                 question.innerHTML = currentQuestion.question;
-                console.log(jsonResponse);
+                triviaNumQuestions++;
             } else {
                 console.error("Error getting a new question", xhr.status);
             }
@@ -58,7 +68,6 @@ function loadQuestion() {
 
 var getSessionToken = function () {
     var uri = tokenEndpoint + "?command=request"
-    console.log("getting new session token");
     var	xhr = new XMLHttpRequest();
 
     xhr.open("GET", uri, true);
@@ -69,7 +78,6 @@ var getSessionToken = function () {
                 if (jsonResponse.response_code === 0) {
                     sessionToken = jsonResponse.token;
                 }
-                console.log("resp", jsonResponse);
             } else {
                 console.error("Error getting a new session token", xhr.status);
             }
