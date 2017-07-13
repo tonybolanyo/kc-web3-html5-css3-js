@@ -27,8 +27,11 @@
 }
 
 .buttons-wrapper {
+    position: absolute;
     text-align: center;
     padding: 1em;
+    bottom: 1em;
+    width: 100%;
 }
 
 .trivia-true-btn {
