@@ -39,7 +39,11 @@ window.addEventListener("load", function() {
     var menuItems = document.getElementsByClassName("navbar-list-item");
 
     for (var i = 0; i < menuItems.length; i++) {
-        menuItems[i].addEventListener("click", scrollToSection);
+        if (menuItems[i].classList.contains('popup-link')) {
+            menuItems[i].addEventListener("click", openPopup);
+        } else {
+            menuItems[i].addEventListener("click", scrollToSection);
+        }
     }
 
     // home is a special case because we use logo to navitate to top
@@ -91,6 +95,13 @@ function smoothScroll(offset) {
     window.scrollTo(0, toPos);
     setTimeout(smoothScroll, 30, offset - step);
 
+}
+
+function openPopup(event) {
+    event.preventDefault();
+    var elementId = event.target.dataset.target 
+    var target = document.getElementById(elementId);
+    target.classList.add("popup-visible");
 }
 
 /* scroll spy to activate current section navbar item */

@@ -1,0 +1,77 @@
+.popup-section {
+    position: fixed;
+    background-color: #F0F0F0;
+    z-index: 9998;
+    top: 10%;
+    left: 10%;
+    bottom: 10%;
+    right: 10%;
+    border: solid 1px #333;
+    padding: 2em;
+    display: none;
+}
+
+.popup-visible {
+    display: block;
+    opacity: 0;
+    animation: fadeDownward 150ms ease forwards;
+}
+
+.popup-section > h1 {
+    text-align: center;
+}
+
+.question-wrapper {
+    max-width: 500px;
+    margin: auto;
+}
+
+.buttons-wrapper {
+    text-align: center;
+    padding: 1em;
+}
+
+.trivia-true-btn {
+    background-color: green;
+    color: #FFFFFF;
+}
+
+.trivia-false-btn {
+    background-color: darkred;
+    color: #FFFFFF;
+}
+
+[class*="trivia-result-"] {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    right: 10%;
+    text-align: center;
+    border: solid 1px #ccc;
+    padding: 1em;
+    font-size: 3em;
+    font-weight: bold;
+    display: none;
+}
+
+[class*="trivia-result-"].visible {
+    display: block;
+    opacity: 0;
+    animation: fadeAndZoom .6s ease-in-out forwards;
+}
+
+.trivia-result-correct {
+    background-color: lightgreen;
+    color: darkgreen;
+}
+
+.trivia-result-fail {
+    background-color: lightcoral;
+    color: darkred;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tony G. Bolaño</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid.css">
@@ -12,6 +14,7 @@
     <link rel="stylesheet" href="css/timeline.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/trivia.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:300|Lato:300|Roboto+Mono" rel="stylesheet">
 </head>
 <body>
@@ -38,6 +41,9 @@
             <li class="navbar-list-item"><a href="#section-education" title="education">education</a></li>
             <li class="navbar-list-item"><a href="#section-experience" title="experience">experience</a></li>
             <li class="navbar-list-item"><a href="#section-about" title="about me">about me</a></li>
+            <li class="navbar-list-item popup-link">
+                <a href="trivia.html" title="play computer trivia with me" data-target="trivia">trivia</a
+            ></li>
             <li class="navbar-list-item"><a href="#section-contact" title="contact me">contact</a></li>
         </ul>
     </nav>
@@ -265,6 +271,20 @@
                 </div>
             </div>
         </section>
+        <section id="trivia" class="popup-section">
+            <button class="close-btn">Close</button>
+            <h1>Play a computer trivia with me</h1>
+            <div class="question-wrapper">
+                <h3>Question:</h3>
+                <p class="trivia-question" id="trivia-question"></p>
+            </div>
+            <div class="buttons-wrapper">
+                <button class="trivia-btn trivia-true-btn" value="true">True</button>
+                <button class="trivia-btn trivia-false-btn" value="false">False</button>
+            </div>
+            <p class="trivia-result-correct" id="trivia-ok">Correct!</p>
+            <p class="trivia-result-fail" id="trivia-fail">Fail!</p>
+        </section>
         <section id="section-contact" class="section-container">
             <h1 class="section-title">contact</h1>
             <form action="#" method="POST" name="contact">
@@ -354,5 +374,6 @@
     </footer>
     <script src="js/navbar.js"></script>
     <script src="js/typewriter.js"></script>
+    <script src="js/trivia.js"></script>
 </body>
 </html>

@@ -52,8 +52,7 @@ textarea:focus ~ label
     color:darkred;
 }
 
-button.submit {
-    background: #FFA828;
+button {
     padding: 8px;
     border: 0;
     font-size: 18px;
@@ -61,6 +60,12 @@ button.submit {
     font-weight: bold;
     width: 50%;
     max-width: 150px;
+    cursor: pointer;
+}
+
+
+button.submit {
+    background: #FFA828;
 }
 
 .form-group > .group-title {
