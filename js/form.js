@@ -22,13 +22,15 @@ var vFields = {
     }
 };
 
+var submitBtn = document.getElementById("submit");
+var loadingIcon = document.createElement('span');
+loadingIcon.classList.add("icon-spinner-arrow", "icon-spin");
 
 var markErrorField = function(inputElem, message) {
     var group = inputElem.parentElement;
     var htmlErrorIcon = '<span class="icon-warning icon-validation"></span>';
     var icon = document.createElement("span");
-    icon.classList.add("icon-warning");
-    icon.classList.add("icon-validation");
+    icon.classList.add("icon-warning", "icon-validation");
     group.append(icon);
     var msg = document.createElement("div");
     msg.classList.add("form-error-text");
@@ -56,7 +58,6 @@ var removeErrorMark = function(inputElem) {
 /* Validate all fields before submit the form */
 form.addEventListener("submit", function(event) {
     event.preventDefault();
-    console.log("Submitting form");
     var firstError = null;
     for (var key in vFields) {
         removeErrorMark(vFields[key].element);
@@ -71,9 +72,11 @@ form.addEventListener("submit", function(event) {
         // then we move focus to field with error
         firstError.focus();
     } else {
+        submitBtn.setAttribute("disabled", "");
+        submitBtn.appendChild(loadingIcon);
         setTimeout(function () {
-            //submitButton.removeAttribute("disabled");
-            //submitButton.removeChild(loadingIcon);
+            submitBtn.removeAttribute("disabled");
+            submitBtn.removeChild(loadingIcon);
             sendNotification(
                 "New message from " + vFields["name"].element.value,
                 form.querySelector("textarea").value

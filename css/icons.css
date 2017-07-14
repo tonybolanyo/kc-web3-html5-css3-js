@@ -39,11 +39,8 @@
     font-size: 40px !important;
 }
 
-.icon-spin {
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
+.icon-spin:before {
+    display: inline-block;
     animation: spin 2s infinite linear;
     opacity: .6;
 }
