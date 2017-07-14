@@ -84,6 +84,8 @@
     -ms-transition: background-color 300ms ease;
     -o-transition: background-color 300ms ease;
     transition: background-color 300ms ease;
+    padding: 5px;
+    min-width: auto;
 }
 
 .close-btn:hover {

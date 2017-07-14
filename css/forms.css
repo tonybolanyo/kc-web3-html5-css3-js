@@ -42,6 +42,10 @@ input:focus {
     left: calc(100% - 30px);
 }
 
+.radio-control .icon-validation {
+    top: 0;
+}
+
 input[type="radio"] {
     width: auto;
 }
@@ -55,14 +59,18 @@ textarea {
     padding: 5px 15px;
 }
 
+button {
+    border: 0;
+    border-radius: 2px;
+    padding: 15px;
+    min-width: 100px;
+}
+
 button.submit {
     width: 100%;
-    border: 0;
     background-color: #FFB241;
-    padding: 15px;
-    border-radius: 2px;
-    font-weight: bold;
     margin: 10px 0;
+    font-weight: bold;
 }
 
 button:focus.submit {
@@ -78,4 +86,83 @@ button:disabled.submit {
 .form-error-text {
     color: red;
     font-size: small;
+}
+
+.radio-control .form-error-text {
+    position: absolute;
+    top: 2.5px; /* label font size - message font size*/
+    right: 40px;
+}
+
+/* Customizing radio buttons */
+
+.radio-control {
+    margin-left: 8px;
+}
+
+/* first, hide the original radio button */
+.form-group > .radio-control > input[type=radio] {
+    position: absolute;
+    display: none;
+}
+
+/* make some space to draw custom radio before field label */
+.form-group > .radio-control > input[type=radio] + label {
+    position: relative;
+    padding-left: 2em;
+    vertical-align: middle;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Draw custom radio before field label
+   This is the 'unchecked' state. */
+.form-group > .radio-control > input[type=radio] + label:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    margin-top: -9px;
+    border: 2px solid #ccd;
+    border-radius: 50%;
+    transition: border 0.4s ease;
+}
+
+/* change color if checked */
+.form-group > .radio-control > input[type=radio]:checked + label:before {
+    border: 2px solid #B2700E;
+}
+
+/* draw checked state, but hide until checked */
+.form-group > .radio-control > input[type=radio] + label:after {
+    border-radius: 50%;
+    content: '';
+    background-color: #FFA828;
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    /* use scale to make some smooth check-in */
+    transform: scale(0);
+    transform-origin: 50%;
+    transition: transform .04s ease;
+}
+
+/* show checked state */
+.form-group > .radio-control > input[type=radio]:checked + label:after {
+    transform: scale(1);
+}
+
+#knownbyother {
+    visibility: hidden;
+    margin-top: 34px;
+}
+
+/* we can do this with JavaScript, but it's a presentation concern */
+#knownby4:checked ~ #knownbyother {
+    visibility: visible;
 }
