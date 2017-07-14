@@ -109,7 +109,7 @@ function openPopup(event) {
 var sections = document.getElementsByTagName("section");
 var currentSection = null;
 
-function isSectionVisible(section) {
+function isSectionVisible(section, isLastSection) {
     // returns `true` if a section is considered visible (also active).
     var rect = section.getBoundingClientRect();
     var vpHeight = window.innerHeight;
@@ -118,11 +118,13 @@ function isSectionVisible(section) {
     if (rect.bottom < 0 || rect.top > vpHeight)
         return false;
 
-    // Return true if top is in the top half of the viewport
-    // or top half of viewport is "inside" section bounds
     return (
+        // top is "above" the bottom of the navbar
         rect.top > 0 && rect.top < navbar.getBoundingClientRect().height ||
-        rect.top < 0 && rect.bottom > navbar.getBoundingClientRect().height
+        // bottom is "down" the bottom of the navbar
+        rect.top < 0 && rect.bottom > navbar.getBoundingClientRect().height ||
+        // is last section and bottom is on viewport
+        isLastSection && rect.bottom < vpHeight
     );
 }
 
@@ -148,7 +150,7 @@ window.addEventListener("scroll", function() {
     for (var i = 0; i < sections.length; i++) {
         var sectionId = sections[i].id;
         var selector = "a[href$='" + sectionId + "']";
-        if (isSectionVisible(sections[i])) {
+        if (isSectionVisible(sections[i], i === sections.length)) {
             if (!currentSection || currentSection != sectionId) {
                 // only apply classes if current section changes
                 // not every scroll event inside a section.
