@@ -32,9 +32,9 @@ loadingIcon.classList.add("icon-spinner-arrow", "icon-spin");
 
 var markErrorField = function(inputElem, message) {
     var group = inputElem.parentElement;
-    var htmlErrorIcon = '<span class="icon-warning icon-validation"></span>';
     var icon = document.createElement("span");
-    icon.classList.add("icon-warning", "icon-validation");
+    icon.classList.add("icon-warning");
+    icon.classList.add("icon-validation");
     group.appendChild(icon);
     var msg = document.createElement("div");
     msg.classList.add("form-error-text");

@@ -192,17 +192,10 @@ img.responsive {
 
 /* Education section */
 
-#section-education:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100%;
-    background-image: url("../images/graduation-907565.jpg");
+#section-education {
+    background-image: url("../images/graduation-907565-blue.jpg");
     background-size: cover;
     background-position: center;
-    filter: grayscale(100%) opacity(.1);
 }
 
 /* about me section */
