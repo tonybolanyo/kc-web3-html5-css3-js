@@ -13,11 +13,11 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin: 2em 8px 1em 8px;
+    margin: 2em 0 1em 0;
 }
 
 p {
-    margin: 8px;
+    margin: 8px 0;
 }
 
 /* IE11 doesn't fully support main

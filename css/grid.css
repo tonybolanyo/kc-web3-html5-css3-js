@@ -70,3 +70,19 @@
 .col-offset-1 {
     margin-left: calc(100% / 12);
 }
+
+/* define some padding to separate columns */
+[class*="col-"] {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/* left most column must not have left padding */
+[class*="col-"]:first-child {
+    padding-left: 0;
+}
+
+/* right most column must not have right padding */
+[class*="col-"]:last-child {
+    padding-right: 0;
+}
