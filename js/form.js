@@ -31,11 +31,11 @@ var markErrorField = function(inputElem, message) {
     var htmlErrorIcon = '<span class="icon-warning icon-validation"></span>';
     var icon = document.createElement("span");
     icon.classList.add("icon-warning", "icon-validation");
-    group.append(icon);
+    group.appendChild(icon);
     var msg = document.createElement("div");
     msg.classList.add("form-error-text");
     msg.innerText = message;
-    group.append(msg);
+    group.appendChild(msg);
     inputElem.classList.add("invalid");
 }
 
@@ -45,12 +45,10 @@ var removeErrorMark = function(inputElem) {
     var error = group.querySelector(".form-error-text");
     // error elements are the last two of the group
     if (icon) {
-        console.log(icon);
-        icon.remove();
+        group.removeChild(icon);
     }
     if (error) {
-        console.log(error);
-        error.remove();
+        group.removeChild(error);
     }
     inputElem.classList.remove("invalid");
 }
