@@ -155,7 +155,7 @@ img.responsive {
     width: 100vw;
 }
 
-.inverted h1, .inverted h2, .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
+.inverted h1, .inverted h2, .inverted h3, .inverted h4, .inverted h5, .inverted h6, .inverted a {
     color: #ffffff;
 }
 
@@ -187,7 +187,6 @@ img.responsive {
 
 .justify {
     text-align: justify;
-    margin-right: 2em;
 }
 
 
@@ -204,6 +203,22 @@ img.responsive {
     background-size: cover;
     background-position: center;
     filter: grayscale(100%) opacity(.1);
+}
+
+/* about me section */
+
+img.left-aligned {
+    max-width: 40%;
+    float: left;
+    margin-right: 2em;
+    margin-bottom: 2em;
+}
+
+img.right-aligned {
+    max-width: 40%;
+    float: right;
+    margin-left: 2em;
+    margin-bottom: 2em;
 }
 
 /* Footer */
