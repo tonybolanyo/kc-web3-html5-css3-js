@@ -16,9 +16,13 @@ var vFields = {
         element: document.getElementById("knownby1"),
         message: "Select one option, please"
     },
+    knownby4: {
+        element: document.getElementById("knownby4"),
+        message: ""
+    },
     knownbyother: {
         element: document.getElementById("knownbyother"),
-        message: "Please write one origin or select an element from the list"
+        message: "Please write an origin"
     }
 };
 
@@ -66,6 +70,15 @@ form.addEventListener("submit", function(event) {
             }
         }
     }
+
+    // Validate if known by other is selected
+    if (vFields["knownby4"].element.checked && !vFields["knownbyother"].element.value) {
+        markErrorField(vFields["knownbyother"].element, vFields["knownbyother"].message);
+        if (!firstError) {
+            firstError = vFields["knownbyother"].element;
+        }
+    }
+
     if (firstError) {
         // then we move focus to field with error
         firstError.focus();
