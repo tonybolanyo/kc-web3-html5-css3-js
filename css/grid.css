@@ -78,11 +78,11 @@
 }
 
 /* left most column must not have left padding */
-[class*="col-"]:first-child {
+[class*="col-"]:first-child, [class*="col-"]:first-of-type {
     padding-left: 0;
 }
 
 /* right most column must not have right padding */
-[class*="col-"]:last-child {
+[class*="col-"]:last-child, [class*="col-"]:last-of-type {
     padding-right: 0;
 }

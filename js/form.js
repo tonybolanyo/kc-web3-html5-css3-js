@@ -95,6 +95,7 @@ form.addEventListener("submit", function(event) {
             form.reset();
         }, 1000)
     }
+
 });
 
 /* Validate field when lost focus */
@@ -119,7 +120,8 @@ function sendNotification (msg, body) {
 
     if (body) {
         var options = {
-            body: body
+            body: body,
+            icon: '../images/tony.jpg'
         };
     }
 
