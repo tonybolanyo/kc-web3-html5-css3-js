@@ -15,7 +15,7 @@ input {
     border: 0;
     background: #e9e9ff;
     border-radius: 2px;
-    line-height: 2em;
+    line-height: 36px;  /* default font-size * 2 */
     padding: 5px 15px;
 }
 
@@ -55,7 +55,7 @@ textarea {
     border: 0;
     background: #e9e9ff;
     border-radius: 2px;
-    line-height: 2em;
+    line-height: 36px; /* default font size * 2 */
     padding: 5px 15px;
 }
 
