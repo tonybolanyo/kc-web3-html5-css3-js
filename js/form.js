@@ -111,8 +111,6 @@ form.addEventListener("submit", function(event) {
 /* Validate field when lost focus */
 for (var key in vFields) {
     vFields[key].element.addEventListener("blur", function(event) {
-        console.log(this);
-        console.log(event.target.id)
         var elem = event.target;
         var msg = vFields[elem.id].message;
         removeErrorMark(elem);
@@ -133,7 +131,6 @@ var sendForm = function() {
     var fields = form.elements;
     for (var i=0; i<fields.length; i++){
         var item = fields[i];
-        console.log(item.type);
         if (item.type === "submit" ||
             item.type === "radio" && !item.checked ||
             item.value === "undefined") {
