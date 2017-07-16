@@ -24,6 +24,10 @@ var vFields = {
     knownbyother: {
         element: document.getElementById("knownbyother"),
         message: "Please write an origin"
+    },
+    comments: {
+        element: document.getElementById("comments"),
+        message: "No more than 150 words are allowed"
     }
 };
 
@@ -77,6 +81,14 @@ form.addEventListener("submit", function(event) {
         markErrorField(vFields["knownbyother"].element, vFields["knownbyother"].message);
         if (!firstError) {
             firstError = vFields["knownbyother"].element;
+        }
+    }
+
+    // Validate max words allowed in comments
+    if (!checkWords(vFields["comments"].element)) {
+        markErrorField(vFields["comments"].element, vFields["comments"].message);
+        if (!firstError) {
+            firstError = vFields["comments"].element;
         }
     }
 
@@ -143,4 +155,16 @@ var sendForm = function() {
     resultsDiv.appendChild(closeBtn);
     body.appendChild(resultsDiv);
     resultsDiv.classList.add("popup-visible");
+}
+
+/* For validate max words allowed on textarea */
+var checkWords = function (textarea) {
+    // returns true if num words is less than max words allowed
+    // false otherwise
+    var maxWords = 150;
+    var words = textarea.value.split(/[\s]+/); /* split if one or more spaces */
+    if(words.length > maxWords) {
+        return false;
+    }
+    return true;
 }
