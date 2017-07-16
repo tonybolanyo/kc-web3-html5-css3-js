@@ -1,0 +1,42 @@
+.popup-section {
+    position: fixed;
+    background-color: #F0F0F0;
+    z-index: 99999;
+    top: 10%;
+    left: 10%;
+    bottom: 10%;
+    right: 10%;
+    border: solid 1px #333;
+    padding: 2em;
+    display: none;
+}
+
+.popup-visible {
+    display: block;
+    opacity: 0;
+    animation: fadeDownward 150ms ease forwards;
+}
+
+.popup-section table {
+    border-collapse: collapse;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+.popup-section tr {
+    border-top: solid 1px #666;
+    border-bottom: solid 1px #666;
+}
+.popup-section th {
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.popup-section th, .popup-section td {
+    padding: 5px;
+}
+
+.popup-section .close-button {
+    display: block;
+    margin: 10px auto;
+}

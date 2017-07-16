@@ -1,3 +1,4 @@
+var body = document.getElementsByTagName("body")[0];
 var form = document.getElementById("contact-form");
 var vFields = {
     name: {
@@ -88,10 +89,7 @@ form.addEventListener("submit", function(event) {
         setTimeout(function () {
             submitBtn.removeAttribute("disabled");
             submitBtn.removeChild(loadingIcon);
-            sendNotification(
-                "New message from " + vFields["name"].element.value,
-                form.querySelector("textarea").value
-            );
+            sendForm();
             form.reset();
         }, 1000)
     }
@@ -114,24 +112,35 @@ for (var key in vFields) {
 
 
 /* No send anything when submitting form
-   we use notifications API as backend ;) */
-function sendNotification (msg, body) { 
-    var notification = Notification || mozNotification || webkitNotification;
-
-    if (body) {
-        var options = {
-            body: body,
-            icon: '../images/tony.jpg'
-        };
+   we use a kind of popup ;) */
+var sendForm = function() {
+    var resultsDiv = document.createElement("div");
+    resultsDiv.classList.add("popup-section");
+    var table = document.createElement("table");
+    resultsDiv.appendChild(table);
+    var fields = form.elements;
+    for (var i=0; i<fields.length; i++){
+        var item = fields[i];
+        console.log(item.type);
+        if (item.type === "submit" ||
+            item.type === "radio" && !item.checked ||
+            item.value === "undefined") {
+            continue;
+        }
+        var tr = document.createElement("tr");
+        table.appendChild(tr);
+        var th = document.createElement("th");
+        th.innerText = item.name + ":";
+        tr.appendChild(th);
+        var td = document.createElement("td");
+        td.innerText = item.value;
+        tr.appendChild(td);
     }
-
-    if (typeof notification === 'undefined') {
-        alert("Notificaciones no soportadas");
-    } else {
-        notification.requestPermission(function (permission) {
-            if (Notification.permission === 'granted') {
-                new Notification(msg, options);
-            }
-        });
-    }
+    var closeBtn = document.createElement("button");
+    closeBtn.classList.add("close-button");
+    closeBtn.innerText = "OK";
+    closeBtn.addEventListener("click", function(event) { body.removeChild(resultsDiv); });
+    resultsDiv.appendChild(closeBtn);
+    body.appendChild(resultsDiv);
+    resultsDiv.classList.add("popup-visible");
 }
