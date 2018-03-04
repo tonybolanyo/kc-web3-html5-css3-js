@@ -125,6 +125,10 @@ img.responsive {
 
 /* Section general settings */
 
+.section-title {
+    font-size: 2em;
+}
+
 .section-title::after {
     content: "_";
     color: #FFA828;
@@ -171,6 +175,12 @@ img.responsive {
     height: auto;
     /* compensate h1 size on left block */
     margin-top: 7em;
+}
+
+.skill-name {
+    font-family: Montserrat, "Open Sans", Arial, Helvetica, sans-serif;
+    color: #111133;
+    font-weight: 700;
 }
 
 .speciality {

@@ -53,8 +53,11 @@
     color: #B2700E;
 }
 
-.timeline > .entry > .title > h4 {
+.timeline > .entry > .title > .role {
     margin: 0;
+    font-family: Montserrat, "Open Sans", Arial, Helvetica, sans-serif;
+    color: #111133;
+    font-weight: 700;
 }
 
 .timeline > .entry > .description {
